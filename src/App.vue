@@ -24,23 +24,9 @@ export default {
     FileTree,
   },
   data: () => ({
-    // tree: {
-    //   children: [
-    //     {
-    //       id: 1,
-    //       path: '',
-    //       name: 'Main.java',
-    //       model: {
-    //         value: '// This is your main file...',
-    //         language: 'java',
-    //       },
-    //     },
-    //   ],
-    // },
     tree: defaultGradleProject,
     editor: null,
     activeNode: null,
-    // fileIndexStack: [],
   }),
   methods: {
     // Updates content of current file model and saves models in Store
@@ -56,14 +42,6 @@ export default {
 
       // Find current model in models array and update it
       let _models = this.models;
-      // for (let i = 0; i < _models.length; i++) {
-      //   if (_models[i].id === newModel.id) {
-      //     _models[i] = newModel;
-      //     break;
-      //   }
-      // }
-      // // Save updated models array in Store
-      // this.$store.dispatch('updateAllModels', _models);
       updateModels(newModel, _models, this.$store);
     }, 500),
   },
@@ -152,7 +130,6 @@ body {
 
 .editor {
   height: 100%;
-  /*margin-left: 370px;*/
   margin-left: 17%;
   width: 60%;
   position: absolute;

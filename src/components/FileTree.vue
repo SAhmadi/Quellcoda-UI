@@ -119,7 +119,6 @@ export default {
 
 <style lang="scss">
 .tree {
-  /*width: 300px;*/
   height: 100%;
   position: absolute;
   background: #f0f0f5;

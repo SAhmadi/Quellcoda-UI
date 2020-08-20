@@ -1,3 +1,5 @@
+// This file holds the Vue-state
+
 import Vue from 'vue';
 import Vuex from 'vuex';
 
@@ -13,11 +15,9 @@ export default new Vuex.Store({
     newFileCounter: 0,
     consoleText: '',
     isWaiting: false,
-    isGradleProject: false,
   },
   mutations: {
     mutateActiveNode(state, activeNode) {
-      //state.activeNode = { ...state.activeNode, activeNode };
       state.activeNode = activeNode;
     },
     mutateActiveNodeId(state, activeNodeId) {
@@ -27,11 +27,9 @@ export default new Vuex.Store({
       state.activeModel = { ...state.activeModel, activeModel };
     },
     mutateFileTreeChildren(state, fileTreeChildren) {
-      //Vue.set(state, 'fileTreeChildren', [...fileTreeChildren]);
       state.fileTreeChildren = [ ...fileTreeChildren ];
     },
     mutateModels(state, newModel) {
-      //Vue.set(state, 'models', [...newModels]);
       state.models = [ ...state.models, newModel];
     },
     mutateAllModels(state, newModels) {
@@ -46,9 +44,6 @@ export default new Vuex.Store({
     mutateIsWaiting(state, isWaiting) {
       state.isWaiting = isWaiting;
     },
-    mutateIsGradleProject(state, isGradleProject) {
-      state.isGradleProject = isGradleProject;
-    }
   },
   actions: {
     updateActiveNode({ commit }, activeNode) {
@@ -80,9 +75,6 @@ export default new Vuex.Store({
     updateIsWaiting({ commit }, isWaiting) {
       commit('mutateIsWaiting', isWaiting);
     },
-    updateIsGradleProject({ commit }, isGradleProject) {
-      commit('mutateIsGradleProject', isGradleProject);
-    }
   },
   getters: {
     activeNode: state => state.activeNode,
@@ -93,7 +85,6 @@ export default new Vuex.Store({
     newFileCounter: state => state.newFileCounter,
     consoleText: state => state.consoleText,
     isWaiting: state => state.isWaiting,
-    isGradleProject: state => state.isGradleProject,
   },
   modules: {},
 });
