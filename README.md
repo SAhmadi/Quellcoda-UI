@@ -31,4 +31,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - File dist/index.html already exists. Overwrite? `N`
 
 # Deploy Firebase Project
+- `npm run build`
 - `firebase deploy`
